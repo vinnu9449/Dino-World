@@ -87,7 +87,7 @@ elif st.session_state.page == "explore":
 
     try:
         image = Image.open(dino["image"])
-        st.image(image, caption=choice, use_column_width=True)
+        st.image(image, caption=choice, use_container_width=True)
     except:
         st.error("Image not found. Make sure the image file is in the same folder.")
 
