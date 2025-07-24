@@ -1,89 +1,100 @@
 
 import streamlit as st
+from PIL import Image
 
 st.set_page_config(page_title="Dino World 🦖", page_icon="🦕", layout="centered")
 
 if "page" not in st.session_state:
     st.session_state.page = "home"
 
-def show_home():
-    st.title("🦕 Welcome to the World of Dinosaurs, Kiddo!")
-    st.write("Get ready to explore some cool dinosaurs! Click the button below to start your journey. 🦖🌿")
-    if st.button("Start Exploring 🚀"):
+if st.session_state.page == "home":
+    st.markdown("<h1 style='text-align: center;'>🦖 WELCOME TO THE WORLD OF DINOSAURS, KIDDO! 🦕</h1>", unsafe_allow_html=True)
+    if st.button("Start Exploring!"):
         st.session_state.page = "explore"
+        st.experimental_rerun()
 
-def show_explore():
-    st.title("🦖 Choose Your Dino Buddy!")
+elif st.session_state.page == "explore":
+    st.markdown("## 🦕 Choose a Dinosaur to Learn More!")
     dinos = {
-        "Tyrannosaurus Rex": {
-            "image": "https://static.wikia.nocookie.net/dinosaurs/images/3/3a/Tyrannosaurus_rex.png",
+        "Tyrannosaurus": {
+            "image": "download (1).jpg",
             "facts": [
-                "Name means 'Tyrant Lizard King'",
-                "Lived about 68 million years ago",
-                "Had banana-sized teeth!",
-                "One of the most ferocious predators"
+                "Name means 'Tyrant Lizard King'.",
+                "One of the largest meat-eating dinosaurs.",
+                "Lived around 68 million years ago."
             ]
         },
         "Triceratops": {
-            "image": "https://static.wikia.nocookie.net/dinosaurs/images/8/86/Triceratops_BW.png",
+            "image": "download (2).jpg",
             "facts": [
-                "Had three awesome horns",
-                "Used frill to scare enemies",
-                "Was a plant-eater",
-                "Loved to hang out in herds"
+                "Had three distinct horns on its face.",
+                "Herbivore with a large bony frill.",
+                "Lived in the Late Cretaceous period."
             ]
         },
         "Velociraptor": {
-            "image": "https://static.wikia.nocookie.net/dinosaurs/images/5/5f/Velociraptor_BW.png",
+            "image": "download (3).jpg",
             "facts": [
-                "Fast and clever hunter",
-                "Had sharp claws",
-                "Used teamwork to hunt",
-                "Was smaller than shown in movies"
-            ]
-        },
-        "Stegosaurus": {
-            "image": "https://static.wikia.nocookie.net/dinosaurs/images/7/72/Stegosaurus_BW.png",
-            "facts": [
-                "Had cool back plates",
-                "Tail had spikes for defense",
-                "Brain was tiny (like a puppy's)",
-                "Loved munching on plants"
+                "Fast and intelligent hunter.",
+                "Had feathers, not just scales!",
+                "Much smaller than shown in movies."
             ]
         },
         "Brachiosaurus": {
-            "image": "https://static.wikia.nocookie.net/dinosaurs/images/1/19/Brachiosaurus_BW.png",
+            "image": "download (4).jpg",
             "facts": [
-                "Was as tall as a 4-story building",
-                "Had a super long neck",
-                "A gentle plant-eater",
-                "Loved to eat leaves from tall trees"
+                "Had a long neck and small head.",
+                "Herbivore that reached tree tops.",
+                "Lived during the Jurassic period."
+            ]
+        },
+        "Stegosaurus": {
+            "image": "download (5).jpg",
+            "facts": [
+                "Famous for its back plates.",
+                "Had a tiny brain, walnut-sized!",
+                "Used its tail spikes for defense."
             ]
         },
         "Ankylosaurus": {
-            "image": "https://static.wikia.nocookie.net/dinosaurs/images/b/b1/Ankylosaurus_BW.png",
+            "image": "download (6).jpg",
             "facts": [
-                "Had armor like a tank",
-                "Tail club used for defense",
-                "A slow mover but super tough",
-                "Loved low plants"
+                "Covered in heavy armor plates.",
+                "Had a clubbed tail for protection.",
+                "Herbivore from Late Cretaceous."
+            ]
+        },
+        "Spinosaurus": {
+            "image": "download (7).jpg",
+            "facts": [
+                "Had a large sail on its back.",
+                "One of the few aquatic dinosaurs.",
+                "Larger than T-Rex!"
+            ]
+        },
+        "Parasaurolophus": {
+            "image": "download (8).jpg",
+            "facts": [
+                "Had a long curved crest on its head.",
+                "Could make loud honking sounds.",
+                "Moved both on two and four legs."
             ]
         }
     }
 
-    dino_names = list(dinos.keys())
-    choice = st.selectbox("Pick a dinosaur to meet:", dino_names)
-
+    choice = st.selectbox("Pick your Dino!", list(dinos.keys()))
     dino = dinos[choice]
-    st.image(dino["image"], width=300, caption=choice)
-    st.subheader("🦴 Fun Facts")
+
+    try:
+        image = Image.open(dino["image"])
+        st.image(image, caption=choice, use_column_width=True)
+    except:
+        st.error("Image not found. Make sure the image file is in the same folder.")
+
+    st.markdown("### Fun Facts:")
     for fact in dino["facts"]:
-        st.markdown(f"- {fact}")
+        st.write(f"• {fact}")
 
-    if st.button("⬅️ Go Back"):
+    if st.button("Back to Home"):
         st.session_state.page = "home"
-
-if st.session_state.page == "home":
-    show_home()
-else:
-    show_explore()
+        st.experimental_rerun()
