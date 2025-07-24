@@ -1,8 +1,9 @@
-# ✅ 1. Install Streamlit
+# ✅ 1. Install Streamlit (won't run in Colab, but avoids errors)
 !pip install streamlit
 
-# ✅ 2. Dino App Code (with working triple quotes)
-dino_code = '''import streamlit as st
+# ✅ 2. Full Dino App Code as a String
+dino_code = '''
+import streamlit as st
 
 st.set_page_config(page_title="Dino World 🦖", page_icon="🦕", layout="centered")
 
@@ -26,7 +27,7 @@ elif st.session_state.page == "dino_page":
 
     dino_data = {
         "T-Rex 🦖": {
-            "image": "https://static.wikia.nocookie.net/dinosaurs/images/3/3a/Tyrannosaurus_rex.png",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Tyrannosaurus_BW.jpg",
             "facts": [
                 "🍗 Meat-lover and top predator!",
                 "📏 Up to 40 feet long!",
@@ -35,7 +36,7 @@ elif st.session_state.page == "dino_page":
             ]
         },
         "Triceratops 🐮": {
-            "image": "https://static.wikia.nocookie.net/dinosaurs/images/8/86/Triceratops_BW.png",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Triceratops_BW.jpg",
             "facts": [
                 "🔱 Three horns for defense.",
                 "🌿 Loved munching on plants!",
@@ -44,7 +45,7 @@ elif st.session_state.page == "dino_page":
             ]
         },
         "Stegosaurus 🦕": {
-            "image": "https://static.wikia.nocookie.net/dinosaurs/images/7/72/Stegosaurus_BW.png",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Stegosaurus_BW.jpg",
             "facts": [
                 "🔰 Plates on back like armor.",
                 "🧠 Brain was teeny tiny!",
@@ -53,7 +54,7 @@ elif st.session_state.page == "dino_page":
             ]
         },
         "Velociraptor 🏃‍♂️": {
-            "image": "https://static.wikia.nocookie.net/dinosaurs/images/5/5f/Velociraptor_BW.png",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Velociraptor_BW.jpg",
             "facts": [
                 "⚡ Super fast and sneaky!",
                 "👯‍♂️ Hunted in packs.",
@@ -62,7 +63,7 @@ elif st.session_state.page == "dino_page":
             ]
         },
         "Brachiosaurus 🦒": {
-            "image": "https://static.wikia.nocookie.net/dinosaurs/images/1/19/Brachiosaurus_BW.png",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/3/30/Brachiosaurus_BW.jpg",
             "facts": [
                 "📏 Could reach treetops!",
                 "🌳 Ate leaves from tall trees.",
@@ -71,7 +72,7 @@ elif st.session_state.page == "dino_page":
             ]
         },
         "Ankylosaurus 🛡️": {
-            "image": "https://static.wikia.nocookie.net/dinosaurs/images/b/b1/Ankylosaurus_BW.png",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/12/Ankylosaurus_BW.jpg",
             "facts": [
                 "🛡️ Armored like a tank!",
                 "🔨 Had a clubbed tail.",
@@ -80,7 +81,7 @@ elif st.session_state.page == "dino_page":
             ]
         },
         "Spinosaurus 🐊": {
-            "image": "https://static.wikia.nocookie.net/dinosaurs/images/b/bc/Spinosaurus_BW.png",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/87/Spinosaurus_BW.jpg",
             "facts": [
                 "🛶 Loved to swim!",
                 "🎣 Ate fish with its long snout.",
@@ -89,7 +90,7 @@ elif st.session_state.page == "dino_page":
             ]
         },
         "Pteranodon 🪂": {
-            "image": "https://static.wikia.nocookie.net/dinosaurs/images/1/12/Pteranodon_BW.png",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Pteranodon_BW.jpg",
             "facts": [
                 "🌬️ Could fly high in the sky!",
                 "📏 Wingspan up to 33 feet!",
@@ -98,7 +99,7 @@ elif st.session_state.page == "dino_page":
             ]
         },
         "Pachycephalosaurus 💥": {
-            "image": "https://static.wikia.nocookie.net/dinosaurs/images/0/0a/Pachycephalosaurus_BW.png",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/55/Pachycephalosaurus_BW.jpg",
             "facts": [
                 "💣 Had a super thick skull!",
                 "🤯 Used headbutts like a wrecking ball.",
@@ -107,7 +108,7 @@ elif st.session_state.page == "dino_page":
             ]
         },
         "Iguanodon 👆": {
-            "image": "https://static.wikia.nocookie.net/dinosaurs/images/f/f4/Iguanodon_BW.png",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Iguanodon_BW.jpg",
             "facts": [
                 "☝️ Had a thumb spike for defense!",
                 "👨‍👦 Traveled in herds.",
@@ -116,7 +117,7 @@ elif st.session_state.page == "dino_page":
             ]
         },
         "Dilophosaurus 🎯": {
-            "image": "https://static.wikia.nocookie.net/dinosaurs/images/8/88/Dilophosaurus_BW.png",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Dilophosaurus_BW.jpg",
             "facts": [
                 "💀 Had two fancy crests on its head!",
                 "🗣️ Might have made scary sounds!",
@@ -139,6 +140,6 @@ elif st.session_state.page == "dino_page":
 with open("dino_app.py", "w") as f:
     f.write(dino_code)
 
-# ✅ 4. Download the file
+# ✅ 4. Download the file to your system
 from google.colab import files
 files.download("dino_app.py")
