@@ -28,57 +28,57 @@ elif st.session_state.page == "explore":
         "Triceratops": {
             "image": "download (2).jpg",
             "facts": [
-                "Had three distinct horns on its face.",
-                "Herbivore with a large bony frill.",
-                "Lived in the Late Cretaceous period."
+                "💥Had three distinct horns on its face.",
+                "🦴Herbivore with a large bony frill.",
+                "🕰️Lived in the Late Cretaceous period."
             ]
         },
         "Velociraptor": {
             "image": "download (3).jpg",
             "facts": [
-                "Fast and intelligent hunter.",
-                "Had feathers, not just scales!",
-                "Much smaller than shown in movies."
+                "💥Fast and intelligent hunter.",
+                "🦴Had feathers, not just scales!",
+                "🕰️Much smaller than shown in movies."
             ]
         },
         "Brachiosaurus": {
             "image": "download (4).jpg",
             "facts": [
-                "Had a long neck and small head.",
-                "Herbivore that reached tree tops.",
-                "Lived during the Jurassic period."
+                "💥Had a long neck and small head.",
+                "🦴Herbivore that reached tree tops.",
+                "🕰️Lived during the Jurassic period."
             ]
         },
         "Stegosaurus": {
             "image": "download (5).jpg",
             "facts": [
-                "Famous for its back plates.",
-                "Had a tiny brain, walnut-sized!",
-                "Used its tail spikes for defense."
+                "💥Famous for its back plates.",
+                "🦴Had a tiny brain, walnut-sized!",
+                "🕰️Used its tail spikes for defense."
             ]
         },
         "Ankylosaurus": {
             "image": "download (6).jpg",
             "facts": [
-                "Covered in heavy armor plates.",
+                "💥Covered in heavy armor plates.",
                 "Had a clubbed tail for protection.",
-                "Herbivore from Late Cretaceous."
+                "🕰️Herbivore from Late Cretaceous."
             ]
         },
         "Spinosaurus": {
             "image": "download (7).jpg",
             "facts": [
-                "Had a large sail on its back.",
-                "One of the few aquatic dinosaurs.",
-                "Larger than T-Rex!"
+                "💥Had a large sail on its back.",
+                "🦴One of the few aquatic dinosaurs.",
+                "🕰️Larger than T-Rex!"
             ]
         },
         "Parasaurolophus": {
             "image": "download (8).jpg",
             "facts": [
-                "Had a long curved crest on its head.",
-                "Could make loud honking sounds.",
-                "Moved both on two and four legs."
+                "💥Had a long curved crest on its head.",
+                "🦴Could make loud honking sounds.",
+                "🕰️Moved both on two and four legs."
             ]
         }
     }
