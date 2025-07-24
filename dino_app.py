@@ -1,9 +1,8 @@
 # ✅ 1. Install Streamlit
 !pip install streamlit
 
-# ✅ 2. Dino App Code with Fixed Images
-dino_code = '''
-import streamlit as st
+# ✅ 2. Dino App Code (with working triple quotes)
+dino_code = '''import streamlit as st
 
 st.set_page_config(page_title="Dino World 🦖", page_icon="🦕", layout="centered")
 
@@ -99,4 +98,47 @@ elif st.session_state.page == "dino_page":
             ]
         },
         "Pachycephalosaurus 💥": {
-            "image
+            "image": "https://static.wikia.nocookie.net/dinosaurs/images/0/0a/Pachycephalosaurus_BW.png",
+            "facts": [
+                "💣 Had a super thick skull!",
+                "🤯 Used headbutts like a wrecking ball.",
+                "🌱 Ate low plants.",
+                "🥽 Dino headgear champ!"
+            ]
+        },
+        "Iguanodon 👆": {
+            "image": "https://static.wikia.nocookie.net/dinosaurs/images/f/f4/Iguanodon_BW.png",
+            "facts": [
+                "☝️ Had a thumb spike for defense!",
+                "👨‍👦 Traveled in herds.",
+                "🥬 Plant-eater with strong arms.",
+                "📜 One of the first dinos discovered!"
+            ]
+        },
+        "Dilophosaurus 🎯": {
+            "image": "https://static.wikia.nocookie.net/dinosaurs/images/8/88/Dilophosaurus_BW.png",
+            "facts": [
+                "💀 Had two fancy crests on its head!",
+                "🗣️ Might have made scary sounds!",
+                "🎭 Spit venom in the movies — but not in real life!",
+                "🎯 Light, fast, and deadly!"
+            ]
+        }
+    }
+
+    selected_dino = st.selectbox("👇 Pick a dino to meet!", list(dino_data.keys()))
+
+    if selected_dino:
+        st.image(dino_data[selected_dino]["image"], width=400, caption=f"Say hi to {selected_dino}!")
+        st.markdown("### 💡 Fun Dino Facts:")
+        for fact in dino_data[selected_dino]["facts"]:
+            st.markdown(f"- {fact}")
+'''
+
+# ✅ 3. Save to .py file
+with open("dino_app.py", "w") as f:
+    f.write(dino_code)
+
+# ✅ 4. Download the file
+from google.colab import files
+files.download("dino_app.py")
