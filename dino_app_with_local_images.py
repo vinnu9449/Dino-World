@@ -9,7 +9,7 @@ if "page" not in st.session_state:
 
 if st.session_state.page == "home":
     st.markdown("<h1 style='text-align: center;'>🦖 WELCOME TO THE WORLD OF DINOSAURS, KIDDO! 🦕</h1>", unsafe_allow_html=True)
-    if st.button("Start Exploring!"):
+    if st.button("🚀 Start Exploring 🦴!"):
         st.session_state.page = "explore"
         st.experimental_rerun()
 
@@ -19,9 +19,10 @@ elif st.session_state.page == "explore":
         "Tyrannosaurus": {
             "image": "download (1).jpg",
             "facts": [
-                "Name means 'Tyrant Lizard King'.",
-                "One of the largest meat-eating dinosaurs.",
-                "Lived around 68 million years ago."
+                "💥 One of the largest meat-eating dinosaurs!",
+                "🦴 Had powerful jaws and sharp teeth.",
+                "🕰️ Lived around 68 to 66 million years ago.",
+                "🎭 Name means ‘Tyrant Lizard King’."
             ]
         },
         "Triceratops": {
