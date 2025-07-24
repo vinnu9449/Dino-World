@@ -61,7 +61,7 @@ elif st.session_state.page == "explore":
             "image": "download (6).jpg",
             "facts": [
                 "💥Covered in heavy armor plates.",
-                "Had a clubbed tail for protection.",
+                "🦴Had a clubbed tail for protection.",
                 "🕰️Herbivore from Late Cretaceous."
             ]
         },
